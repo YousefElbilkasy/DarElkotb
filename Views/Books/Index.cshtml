@@ -1,0 +1,27 @@
+@model IEnumerable<BookCardForIndexViewModel>
+@{
+  ViewData["Title"] = "الكتب";
+}
+
+<a class="btn btn-primary" asp-action="Add">
+  <i class="bi bi-plus-circle"></i>
+  إضافة كتاب
+</a>
+
+<div class="row my-5">
+  @foreach (var book in Model)
+  {
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="~/assets/images/books/@book.CoverImage" class="card-img-top h-75" alt="@book.Title">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">@book.Title</h5>
+          <p class="card-text">المؤلف: @book.Author.Name</p>
+          <p class="card-text">الناشر: @book.Publisher.Name</p>
+          <p class="card-text">السعر: @book.Price ج.م</p>
+          <a asp-action="Details" asp-route-id="@book.Id" class="btn btn-primary mt-auto">التفاصيل</a>
+        </div>
+      </div>
+    </div>
+  }
+</div>

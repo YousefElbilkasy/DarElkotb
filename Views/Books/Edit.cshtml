@@ -1,0 +1,119 @@
+@using DarElkotb.Settings
+@model DarElkotb.ViewModels.EditBookViewModel
+@{
+  ViewData["Title"] = "تعديل";
+}
+
+<style>
+  .cover-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+  }
+</style>
+
+<h5 class="text-primary">
+  <i class="bi bi-pencil"></i>
+  تعديل الكتاب
+</h5>
+
+<div class="my-5">
+  <form asp-controller="Books" asp-action="Edit" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+    <div class="row align-items-stretch">
+      <div class="col-md-6">
+        <div>
+          <label asp-for="Title" class="form-label mt-4"></label>
+          <input type="text" class="form-control" asp-for="Title" value="@Model.Title" placeholder="أدحل عنوان الكتاب">
+          <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div>
+          <label asp-for="Description" class="form-label mt-4"></label>
+          <textarea class="form-control" placeholder="ادخل وصف الكتاب" asp-for="Description"
+            rows="3">@Model.Description</textarea>
+          <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div>
+          <label asp-for="Price" class="form-label mt-4"></label>
+          <div class="input-group">
+            <span class="input-group-text">00.</span>
+            <input type="text" class="form-control" asp-for="Price" value="@Model.Price">
+            <span class="input-group-text">جنيه مصري</span>
+          </div>
+        </div>
+
+        <div>
+          <label asp-for="PublishDate" class="form-label mt-4"></label>
+          <input type="date" asp-for="PublishDate" class="form-control"
+            value="@(Model.PublishDate.HasValue? Model.PublishDate.Value.ToString("yyyy-MM-dd") : String.Empty)">
+          <span asp-validation-for="PublishDate" class="text-danger"></span>
+        </div>
+
+        <div>
+          <label asp-for="CoverImage" class="form-label mt-4"></label>
+          <input class="form-control" type="file" asp-for="CoverImage" id="Cover"
+            accept="@ImageFolderSettings.AllowedExtensions">
+          <small class="form-text text-muted">الملفات المسموح بها @ImageFolderSettings.AllowedExtensions بحد أقصى مساحة
+            @ImageFolderSettings.MaxFileSizeInMB م.ب</small>
+          <div asp-validation-for="CoverImage" class="text-danger"></div>
+        </div>
+
+        <div>
+          <label asp-for="AuthorId" class="form-label mt-4"></label>
+          <select class="form-select" asp-for="AuthorId" asp-items="@Model.Authors">
+            <option></option>
+          </select>
+        </div>
+
+        <div>
+          <label asp-for="PublisherId" class="form-label mt-4"></label>
+          <select class="form-select" asp-for="PublisherId" asp-items="@Model.Publishers">
+            <option></option>
+          </select>
+        </div>
+
+        <div>
+          <label asp-for="CategoryId" class="form-label mt-4"></label>
+          <select class="form-select" asp-for="CategoryId" asp-items="@Model.Categories">
+            <option></option>
+          </select>
+        </div>
+        <div class="mt-4 mb-lg-5">
+          <button type="submit" class="btn btn-primary">تعديل</button>
+        </div>
+      </div>
+      <div class="col-md-6 d-flex">
+        <img class="cover-preview overflow-hidden" src="~/assets/images/books/@Model.CoverImageUrl" alt="Cover">
+      </div>
+    </div>
+  </form>
+</div>
+
+@section Scripts {
+  <partial name="_ValidationScriptsPartial" />
+
+  <script>
+    // preview selected cover image
+    (function () {
+      var currentObjectUrl = null;
+      $(function () {
+        $('#Cover').on('change', function () {
+          try {
+            var f = this.files && this.files[0];
+            if (!f) return;
+            if (currentObjectUrl) URL.revokeObjectURL(currentObjectUrl);
+            currentObjectUrl = URL.createObjectURL(f);
+            $('.cover-preview').attr('src', currentObjectUrl).removeClass('d-none');
+          } catch (e) {
+            console.error('preview error', e);
+          }
+        });
+      });
+    })();
+  </script>
+}

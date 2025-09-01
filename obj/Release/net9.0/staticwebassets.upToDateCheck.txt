@@ -1,0 +1,142 @@
+wwwroot\assets\images\books\204092f2-574a-40a2-a9e5-c81c3eaed1b9.jpg
+wwwroot\assets\images\books\26c7b748-578f-45fe-8b77-0b63a11b39c3.jpg
+wwwroot\assets\images\books\432f4b70-5648-40e5-9cdb-0eaeb4165bab.jpg
+wwwroot\assets\images\books\48af4f32-2dd9-42b9-a898-895ee7db6aea.jpg
+wwwroot\assets\images\books\69d63266-6a5a-42f4-8f17-3a787752da76.jpeg
+wwwroot\assets\images\books\6f6690bb-29a5-4c4f-800d-0ec5f9e5d901.jpeg
+wwwroot\assets\images\books\a0711c2a-b5cc-438b-bb74-db0f76d6808a.jpg
+wwwroot\assets\images\books\bb44cdd4-2804-488a-9f4f-eaa7c31a1a09.jpg
+wwwroot\assets\images\books\cc7a9680-c659-4286-815b-d63f4c68696d.jpeg
+wwwroot\assets\images\books\dcc0302d-8eb4-496b-b325-78e546b93bfd.jpg
+wwwroot\assets\images\books\DefaultImage.jpeg
+wwwroot\assets\images\books\eec9dbd9-9393-42d3-9036-19f85755b886.jpg
+wwwroot\assets\images\books\ef837f01-1b93-454c-8692-0c0ea890fb6f.jpg
+wwwroot\css\bootstrap.rtl.min.css
+wwwroot\css\landing.css
+wwwroot\css\site.css
+wwwroot\favicon.ico
+wwwroot\js\site.js
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+wwwroot\lib\bootstrap\LICENSE
+wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\lib\jquery-validation\dist\additional-methods.js
+wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+wwwroot\lib\jquery-validation\LICENSE.md
+wwwroot\lib\jquery\dist\jquery.js
+wwwroot\lib\jquery\dist\jquery.min.js
+wwwroot\lib\jquery\dist\jquery.min.map
+wwwroot\lib\jquery\dist\jquery.slim.js
+wwwroot\lib\jquery\dist\jquery.slim.min.js
+wwwroot\lib\jquery\dist\jquery.slim.min.map
+wwwroot\lib\jquery\LICENSE.txt
+D:\My Projects\DarElkotb\wwwroot\css\bootstrap.rtl.min.css
+D:\My Projects\DarElkotb\wwwroot\css\landing.css
+D:\My Projects\DarElkotb\wwwroot\css\site.css
+D:\My Projects\DarElkotb\wwwroot\favicon.ico
+D:\My Projects\DarElkotb\wwwroot\js\site.js
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+D:\My Projects\DarElkotb\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+D:\My Projects\DarElkotb\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+D:\My Projects\DarElkotb\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+D:\My Projects\DarElkotb\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+D:\My Projects\DarElkotb\wwwroot\lib\jquery-validation\dist\additional-methods.js
+D:\My Projects\DarElkotb\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+D:\My Projects\DarElkotb\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+D:\My Projects\DarElkotb\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+D:\My Projects\DarElkotb\wwwroot\lib\jquery-validation\LICENSE.md
+D:\My Projects\DarElkotb\wwwroot\lib\jquery\dist\jquery.js
+D:\My Projects\DarElkotb\wwwroot\lib\jquery\dist\jquery.min.js
+D:\My Projects\DarElkotb\wwwroot\lib\jquery\dist\jquery.min.map
+D:\My Projects\DarElkotb\wwwroot\lib\jquery\dist\jquery.slim.js
+D:\My Projects\DarElkotb\wwwroot\lib\jquery\dist\jquery.slim.min.js
+D:\My Projects\DarElkotb\wwwroot\lib\jquery\dist\jquery.slim.min.map
+D:\My Projects\DarElkotb\wwwroot\lib\jquery\LICENSE.txt

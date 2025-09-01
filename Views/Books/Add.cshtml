@@ -1,0 +1,114 @@
+@using DarElkotb.Settings
+@model DarElkotb.ViewModels.AddBookViewModel
+@{
+  ViewData["Title"] = "إنشاء كتاب";
+}
+
+<style>
+  .cover-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+  }
+</style>
+
+<h5 class="text-primary">
+  <i class="bi bi-plus-circle"></i>
+  إضافة كتاب
+</h5>
+
+<form asp-controller="Books" asp-action="Add" method="post" enctype="multipart/form-data">
+  <div class="row align-items-stretch">
+    <div class="col-md-6">
+      <div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <label asp-for="Title" class="form-label mt-4"></label>
+        <input type="text" class="form-control" asp-for="Title" aria-describedby="emailHelp"
+          placeholder="أدحل عنوان الكتاب" data-listener-added_75fb0492="true">
+        <span asp-validation-for="Title" class="text-danger"></span>
+      </div>
+
+      <div>
+        <label asp-for="Description" class="form-label mt-4"></label>
+        <textarea class="form-control" placeholder="ادخل وصف الكتاب" asp-for="Description" rows="3"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+      </div>
+
+      <div>
+        <label asp-for="Price" class="form-label mt-4"></label>
+        <div class="input-group">
+          <span class="input-group-text">00.</span>
+          <input type="text" class="form-control" asp-for="Price">
+          <span class="input-group-text">جنيه مصري</span>
+        </div>
+        <span asp-validation-for="Price" class="text-danger"></span>
+      </div>
+
+      <div>
+        <label asp-for="PublishDate" class="form-label mt-4"></label>
+        <input type="date" asp-for="PublishDate" class="form-control">
+        <span asp-validation-for="PublishDate" class="text-danger"></span>
+      </div>
+
+      <div>
+        <label asp-for="CoverImage" class="form-label mt-4"></label>
+        <input class="form-control" type="file" asp-for="CoverImage" id="Cover"
+          accept="@ImageFolderSettings.AllowedExtensions">
+        <small class="form-text text-muted">الملفات المسموح بها @ImageFolderSettings.AllowedExtensions بحد أقصى مساحة
+          @ImageFolderSettings.MaxFileSizeInMB م.ب</small>
+        <div asp-validation-for="CoverImage" class="text-danger"></div>
+      </div>
+
+      <div>
+        <label asp-for="AuthorId" class="form-label mt-4"></label>
+        <select class="form-select" asp-for="AuthorId" asp-items="@Model.Authors">
+          <option value="">اختر الكاتب</option>
+        </select>
+        <span asp-validation-for="AuthorId" class="text-danger"></span>
+      </div>
+
+      <div>
+        <label asp-for="PublisherId" class="form-label mt-4"></label>
+        <select class="form-select" asp-for="PublisherId" asp-items="@Model.Publishers">
+          <option value="">اختر الناشر</option>
+        </select>
+        <span asp-validation-for="PublisherId" class="text-danger"></span>
+      </div>
+
+      <div>
+        <label asp-for="CategoryId" class="form-label mt-4"></label>
+        <select class="form-select" asp-for="CategoryId" asp-items="@Model.Categories">
+          <option value="">اختر التصنيف</option>
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+      </div>
+
+      <div class="mt-4 mb-lg-5">
+        <button type="submit" class="btn btn-primary">إضافة</button>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex">
+      <img class="cover-preview d-none overflow-hidden" src="" alt="Cover">
+    </div>
+  </div>
+</form>
+
+@section Scripts {
+  <partial name="_ValidationScriptsPartial" />
+
+  <script>
+    $.validator.addMethod('fileSize',
+      function (value, element, param) {
+        return this.optional(element) || element.files[0].size <= param
+      })
+
+    $(document).ready(function () {
+      $('#Cover').on('change', function () {
+        $('.cover-preview').attr('src', window.URL.createObjectURL(this.files[0])).removeClass('d-none')
+      })
+    })
+  </script>
+}
