@@ -11,6 +11,6 @@ public class Author
   [MaxLength(2500)]
   public string Bio { get; set; } = string.Empty;
   [MaxLength(500)]
-  public string ProfileImage { get; set; } = string.Empty;
+  public string ProfileImage { get; set; } = "default.jpg";
   public virtual ICollection<Book> Books { get; set; } = new List<Book>();
 }

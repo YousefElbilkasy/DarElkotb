@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DarElkotb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+588a9df48f08c51415ec212fc36f56169437becd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae6ffafccd6cdfe5493414ed259373f2c27b6c8e")]
 [assembly: System.Reflection.AssemblyProductAttribute("DarElkotb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DarElkotb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
