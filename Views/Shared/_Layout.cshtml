@@ -29,15 +29,23 @@
             <a class="nav-link text-dark" asp-area="" asp-controller="Books" asp-action="Index">الكتب</a>
           </li>
         </ul>
-        <form class="d-flex" data--h-bstatus="0OBSERVED">
-          <input class="form-control me-sm-2" type="search" placeholder="Search" data--h-bstatus="0OBSERVED">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit" data--h-bstatus="0OBSERVED">Search</button>
-        </form>
+
+        <div>
+          @if (!User.Identity.IsAuthenticated)
+          {
+            <a class="btn btn-secondary" asp-action="Login" asp-controller="Accounts">تسجيل الدخول</a>
+            <a class="btn btn-secondary" asp-action="Register" asp-controller="Accounts">إنشاء حساب جديد</a>
+          }
+          else
+          {
+            <a class="btn btn-secondary" asp-action="SignOut" asp-controller="Accounts">تسجيل الخروج</a>
+          }
+        </div>
       </div>
     </div>
   </nav>
 
-  
+
   <div class="container">
     <main role="main" class="pb-3">
       @RenderBody()

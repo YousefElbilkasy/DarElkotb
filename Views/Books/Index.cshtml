@@ -2,11 +2,13 @@
 @{
   ViewData["Title"] = "الكتب";
 }
-
-<a class="btn btn-primary" asp-action="Add">
-  <i class="bi bi-plus-circle"></i>
-  إضافة كتاب
-</a>
+@if (User.IsInRole(nameof(Role.Admin)))
+{
+  <a class="btn btn-primary" asp-action="Add">
+    <i class="bi bi-plus-circle"></i>
+    إضافة كتاب
+  </a>
+}
 
 <div class="row my-5">
   @foreach (var book in Model)

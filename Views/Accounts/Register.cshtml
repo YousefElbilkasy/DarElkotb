@@ -1,0 +1,52 @@
+@model RegisterDto
+@{
+  ViewData["Title"] = "إنشاء حساب جديد";
+}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h4 class="card-title text-center mb-4">@ViewData["Title"]</h4>
+
+          <form asp-action="Register" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="mb-3">
+              <label asp-for="Email" class="form-label"></label>
+              <input asp-for="Email" class="form-control text-start" placeholder="ادخل البريد الإلكتروني" />
+              <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+              <label asp-for="Password" class="form-label"></label>
+              <input asp-for="Password" class="form-control text-start" placeholder="ادخل كلمة المرور" />
+              <span asp-validation-for="Password" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+              <label asp-for="ConfirmPassword" class="form-label"></label>
+              <input asp-for="ConfirmPassword" class="form-control text-start" placeholder="اعد ادخال كلمة المرور" />
+              <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">إنشاء حساب جديد</button>
+            </div>
+
+            <div class="mt-3 text-center small">
+              <a asp-action="Login" asp-controller="Accounts">تسجيل الدخول</a>
+              <span class="mx-2">|</span>
+              <a asp-action="ForgotPassword" asp-controller="Accounts">نسيت كلمة المرور؟</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+  <partial name="_ValidationScriptsPartial" />
+}

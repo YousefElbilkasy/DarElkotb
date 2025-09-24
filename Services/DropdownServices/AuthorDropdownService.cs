@@ -4,7 +4,7 @@ using DarElkotb.UnitOfWork;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
-namespace DarElkotb.Services;
+namespace DarElkotb.Services.DropDownServices;
 
 public class AuthorDropdownService : IDropDownService<Author>
 {
@@ -15,10 +15,10 @@ public class AuthorDropdownService : IDropDownService<Author>
     this.repositories = repositories;
   }
 
-  public IEnumerable<SelectListItem> GetSelectList()
+  public async Task<IEnumerable<SelectListItem>> GetSelectList()
   {
-    return repositories.Authors.GetAll()
-      .Select(c => new SelectListItem()
+    var authors = await repositories.Authors.GetAllAsync();
+    return authors.Select(c => new SelectListItem()
       {
         Text = c.Name,
         Value = c.Id.ToString()

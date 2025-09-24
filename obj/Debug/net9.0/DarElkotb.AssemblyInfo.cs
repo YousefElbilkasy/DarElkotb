@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("8ae7abb0-e092-4939-960c-b8720c533d67")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("DarElkotb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+588a9df48f08c51415ec212fc36f56169437becd")]
 [assembly: System.Reflection.AssemblyProductAttribute("DarElkotb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DarElkotb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

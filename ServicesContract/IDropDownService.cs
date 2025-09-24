@@ -1,9 +1,9 @@
 using System;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace DarElkotb.Services;
+namespace DarElkotb.ServicesContract;
 
 public interface IDropDownService<T> where T : class
 {
-  public IEnumerable<SelectListItem> GetSelectList();
+  public Task<IEnumerable<SelectListItem>> GetSelectList();
 }

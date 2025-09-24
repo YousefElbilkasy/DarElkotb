@@ -3,14 +3,17 @@ namespace DarElkotb.Repository;
 public class GenericRepository<TEntity> where TEntity : class
 {
   private readonly AppDbContext _context;
+  private readonly DbSet<TEntity> _dbSet;
+
   public GenericRepository(AppDbContext context)
   {
     _context = context;
+    _dbSet = _context.Set<TEntity>();
   }
 
-  public IEnumerable<TEntity> GetAll() => _context.Set<TEntity>();
-  public TEntity GetById(int id) => _context.Set<TEntity>().Find(id)!;
-  public void Add(TEntity entity) => _context.Set<TEntity>().Add(entity);
-  public void Update(TEntity entity) => _context.Set<TEntity>().Update(entity);
-  public void Delete(TEntity entity) => _context.Set<TEntity>().Remove(entity);
+  public async Task<IEnumerable<TEntity>> GetAllAsync() => await _dbSet.ToListAsync();
+  public async Task<TEntity?> GetByIdAsync(int id) => await _dbSet.FindAsync(id);
+  public async Task AddAsync(TEntity entity) => await _dbSet.AddAsync(entity);
+  public void Update(TEntity entity) => _dbSet.Update(entity);
+  public void Delete(TEntity entity) => _dbSet.Remove(entity);
 }

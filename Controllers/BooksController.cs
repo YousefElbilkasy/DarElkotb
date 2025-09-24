@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MyApp.Namespace
@@ -8,62 +10,65 @@ namespace MyApp.Namespace
     private readonly IDropDownService<Author> _authorDropDownService;
     private readonly IDropDownService<Publisher> _publisherDropDownService;
     private readonly IBookService _bookService;
-    private readonly UnitOfRepositories _repositories;
 
-    public BooksController(IDropDownService<Category> categoryDropDownService, IDropDownService<Author> authorDropDownService, IDropDownService<Publisher> publisherDropDownService, IBookService bookService, UnitOfRepositories repositories)
+    public BooksController(IDropDownService<Category> categoryDropDownService, IDropDownService<Author> authorDropDownService, IDropDownService<Publisher> publisherDropDownService, IBookService bookService)
     {
       _categoryDropDownService = categoryDropDownService;
       _authorDropDownService = authorDropDownService;
       _publisherDropDownService = publisherDropDownService;
       _bookService = bookService;
-      _repositories = repositories;
     }
 
     // GET: BooksController
     [HttpGet]
-    public ActionResult Index()
+    public async Task<ActionResult> Index()
     {
-      var books = _repositories.Books.GetAll()
-        .Select(b => new BookCardForIndexViewModel
-        {
-          Id = b.Id,
-          Title = b.Title,
-          CoverImage = b.CoverImage,
-          Price = b.Price,
-          AuthorId = b.AuthorId,
-          Author = b.Author,
-          CategoryId = b.CategoryId,
-          Category = b.Category,
-          PublisherId = b.PublisherId,
-          Publisher = b.Publisher
-        })
+      var books = await _bookService.GetAll();
+
+      var bookCards = books
+      .Select(b => new BookCardForIndexViewModel
+      {
+        Id = b.Id,
+        Title = b.Title,
+        CoverImage = b.CoverImage,
+        Price = b.Price,
+        AuthorId = b.AuthorId,
+        Author = b.Author,
+        CategoryId = b.CategoryId,
+        Category = b.Category,
+        PublisherId = b.PublisherId,
+        Publisher = b.Publisher
+      })
         .ToList();
-      return View(books);
+
+      return View(bookCards);
     }
 
+    [Authorize(Roles = nameof(Role.Admin))]
     [HttpGet]
-    public ActionResult Add()
+    public async Task<ActionResult> Add()
     {
       AddBookViewModel model = new()
       {
-        Authors = _authorDropDownService.GetSelectList(),
+        Authors = await _authorDropDownService.GetSelectList(),
 
-        Categories = _categoryDropDownService.GetSelectList(),
+        Categories = await _categoryDropDownService.GetSelectList(),
 
-        Publishers = _publisherDropDownService.GetSelectList()
+        Publishers = await _publisherDropDownService.GetSelectList()
       };
       return View(model);
     }
 
+    [Authorize(Roles = nameof(Role.Admin))]
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<ActionResult> Add(AddBookViewModel model)
     {
       if (!ModelState.IsValid)
       {
-        model.Authors = _authorDropDownService.GetSelectList();
-        model.Categories = _categoryDropDownService.GetSelectList();
-        model.Publishers = _publisherDropDownService.GetSelectList();
+        model.Authors = await _authorDropDownService.GetSelectList();
+        model.Categories = await _categoryDropDownService.GetSelectList();
+        model.Publishers = await _publisherDropDownService.GetSelectList();
         return View(model);
       }
 
@@ -73,9 +78,9 @@ namespace MyApp.Namespace
     }
 
     [HttpGet]
-    public ActionResult Details(int id)
+    public async Task<ActionResult> Details(int id)
     {
-      var book = _repositories.Books.GetById(id);
+      var book = await _bookService.GetById(id);
 
       if (book == null)
         return NotFound();
@@ -83,10 +88,15 @@ namespace MyApp.Namespace
       return View(book);
     }
 
+    [Authorize(Roles = nameof(Role.Admin))]
     [HttpGet]
-    public ActionResult Edit(int id)
+    public async Task<ActionResult> Edit(int id)
     {
-      var book = _repositories.Books.GetById(id);
+      var book = await _bookService.GetById(id);
+
+      if (book == null)
+        return NotFound();
+
       var model = new EditBookViewModel
       {
         Id = book.Id,
@@ -97,15 +107,16 @@ namespace MyApp.Namespace
         AuthorId = book.AuthorId,
         CategoryId = book.CategoryId,
         PublisherId = book.PublisherId,
-        Authors = _authorDropDownService.GetSelectList(),
-        Categories = _categoryDropDownService.GetSelectList(),
-        Publishers = _publisherDropDownService.GetSelectList(),
+        Authors = await _authorDropDownService.GetSelectList(),
+        Categories = await _categoryDropDownService.GetSelectList(),
+        Publishers = await _publisherDropDownService.GetSelectList(),
         CoverImageUrl = book.CoverImage
       };
 
       return View(model);
     }
 
+    [Authorize(Roles = nameof(Role.Admin))]
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<ActionResult> Edit(EditBookViewModel model)
@@ -121,16 +132,12 @@ namespace MyApp.Namespace
     }
 
     // POST: BooksController/Delete/5
+    [Authorize(Roles = nameof(Role.Admin))]
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<ActionResult> Delete(int id)
     {
-      var book = _repositories.Books.GetById(id);
-      if (book == null)
-        return NotFound();
-
-      _repositories.Books.Delete(book);
-      await _repositories.SaveChangesAsync();
+      await _bookService.Delete(id);
 
       return RedirectToAction(nameof(Index));
     }

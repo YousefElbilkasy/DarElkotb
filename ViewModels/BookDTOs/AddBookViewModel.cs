@@ -1,11 +1,7 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Runtime.CompilerServices;
-using DarElkotb.Attributes;
-using DarElkotb.Settings;
+﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace DarElkotb.ViewModels;
+namespace DarElkotb.ViewModels.BookDTOs;
 
 public class AddBookViewModel
 {

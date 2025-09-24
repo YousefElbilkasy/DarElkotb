@@ -1,7 +1,7 @@
 using System;
 using DarElkotb.Models;
 
-namespace DarElkotb.ViewModels;
+namespace DarElkotb.ViewModels.BookDTOs;
 
 public class BookCardForIndexViewModel
 {

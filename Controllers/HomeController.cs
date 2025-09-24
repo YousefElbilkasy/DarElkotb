@@ -1,13 +1,19 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using DarElkotb.Models;
 
 namespace DarElkotb.Controllers;
 
 public class HomeController : Controller
 {
-  public IActionResult Index()
+  private readonly IBookService _bookService;
+
+  public HomeController(IBookService bookService)
   {
-    return View();
+    _bookService = bookService;
+  }
+
+  public async Task<IActionResult> Index()
+  {
+    var book = await _bookService.GetAnyBook();
+    return View(book);
   }
 }

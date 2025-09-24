@@ -1,19 +1,21 @@
+using DarElkotb.RepositoryContract;
+
 namespace DarElkotb.UnitOfWork;
 
 public class UnitOfRepositories
 {
-  public GenericRepository<Author> Authors { get; }
-  public GenericRepository<Book> Books { get; }
-  public GenericRepository<Category> Categories { get; }
-  public GenericRepository<Publisher> Publishers { get; }
+  private IBookRepository _books;
+  public IBookRepository Books => _books ??= new BookRepository(_context);
+  private GenericRepository<Author>? _authors;
+  public GenericRepository<Author> Authors => _authors ??= new GenericRepository<Author>(_context);
+  private GenericRepository<Category>? _categories;
+  public GenericRepository<Category> Categories => _categories ??= new GenericRepository<Category>(_context);
+  private GenericRepository<Publisher>? _publishers;
+  public GenericRepository<Publisher> Publishers => _publishers ??= new GenericRepository<Publisher>(_context);
   private readonly AppDbContext _context;
 
   public UnitOfRepositories(AppDbContext context)
   {
-    Authors = new GenericRepository<Author>(context);
-    Books = new GenericRepository<Book>(context);
-    Categories = new GenericRepository<Category>(context);
-    Publishers = new GenericRepository<Publisher>(context);
     _context = context;
   }
 

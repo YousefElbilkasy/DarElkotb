@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace DarElkotb.Services;
+namespace DarElkotb.Services.DropDownServices;
 
 public class CategoryDropdownService : IDropDownService<Category>
 {
@@ -11,10 +11,10 @@ public class CategoryDropdownService : IDropDownService<Category>
     this.repositories = repositories;
   }
 
-  public IEnumerable<SelectListItem> GetSelectList()
+  public async Task<IEnumerable<SelectListItem>> GetSelectList()
   {
-    return repositories.Categories.GetAll()
-      .Select(c => new SelectListItem()
+    var categories = await repositories.Categories.GetAllAsync();
+      return categories.Select(c => new SelectListItem()
       {
         Text = c.Name,
         Value = c.Id.ToString()

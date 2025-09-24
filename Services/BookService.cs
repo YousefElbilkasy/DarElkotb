@@ -1,25 +1,20 @@
-using System;
-using System.Threading.Tasks;
-using DarElkotb.Data;
-using DarElkotb.Models;
 using DarElkotb.Settings;
-using DarElkotb.UnitOfWork;
-using DarElkotb.ViewModels;
-using Microsoft.EntityFrameworkCore;
 
 namespace DarElkotb.Services;
 
 public class BookService : IBookService
 {
-  private readonly UnitOfRepositories repositories;
+  private readonly UnitOfRepositories _repositories;
   private readonly IWebHostEnvironment _webHostEnvironment;
   private readonly string _imagePath;
   public BookService(IWebHostEnvironment webHostEnvironment, UnitOfRepositories repositories)
   {
     _webHostEnvironment = webHostEnvironment;
-    this.repositories = repositories;
+    _repositories = repositories;
     _imagePath = $"{_webHostEnvironment.WebRootPath}/{ImageFolderSettings.ImageFolder}";
   }
+
+  public async Task<IEnumerable<Book>> GetAll() => await _repositories.Books.GetAllAsync();
 
   public async Task Add(AddBookViewModel book)
   {
@@ -34,7 +29,7 @@ public class BookService : IBookService
     }
 
     // Add the book to the repository
-    repositories.Books.Add(new Book
+    await _repositories.Books.AddAsync(new Book
     {
       Title = book.Title,
       Description = book.Description ?? "",
@@ -45,13 +40,13 @@ public class BookService : IBookService
       CategoryId = book.CategoryId,
       AuthorId = book.AuthorId
     });
-    await repositories.SaveChangesAsync();
+    await _repositories.SaveChangesAsync();
   }
 
   public async Task Update(EditBookViewModel book)
   {
     // Load existing entity
-    var existing = repositories.Books.GetById(book.Id);
+    var existing = await _repositories.Books.GetByIdAsync(book.Id);
     if (existing == null)
       throw new InvalidOperationException($"Book with id {book.Id} not found");
 
@@ -74,7 +69,30 @@ public class BookService : IBookService
     existing.CategoryId = book.CategoryId;
     existing.AuthorId = book.AuthorId;
 
-    repositories.Books.Update(existing);
-    await repositories.SaveChangesAsync();
+    _repositories.Books.Update(existing);
+    await _repositories.SaveChangesAsync();
+  }
+
+  public async Task<Book?> GetById(int id) => await _repositories.Books.GetByIdAsync(id);
+
+  public async Task Delete(int id)
+  {
+    var book = await _repositories.Books.GetByIdAsync(id);
+
+    if (book == null)
+      throw new InvalidOperationException($"Book with id {id} not found");
+
+    _repositories.Books.Delete(book);
+    await _repositories.SaveChangesAsync();
+  }
+
+  public async Task<Book> GetAnyBook()
+  {
+    var book = await _repositories.Books.GetAnyBookAsync();
+
+    if (book == null)
+      throw new InvalidOperationException("No books found");
+
+    return book;
   }
 }

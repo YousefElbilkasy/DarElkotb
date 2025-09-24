@@ -1,10 +1,12 @@
 using System;
 using DarElkotb.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace DarElkotb.Data;
 
-public class AppDbContext : DbContext
+public class AppDbContext : IdentityDbContext<IdentityUser<int>, IdentityRole<int>, int>
 {
   public DbSet<Book> Books { get; set; }
   public DbSet<Author> Authors { get; set; }
@@ -14,6 +16,8 @@ public class AppDbContext : DbContext
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
     base.OnModelCreating(modelBuilder);
+
+    modelBuilder.Entity<Book>().Property(b => b.Price).HasPrecision(18, 2);
 
     modelBuilder.Entity<Author>().HasData(
       new Author { Id = 1, Name = "محمد بن صالح العثيمين", Bio = "عالم سعودي وفقيه وأستاذ جامعي.", ProfileImage = "othaymeen.jpg" },

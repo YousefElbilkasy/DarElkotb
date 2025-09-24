@@ -24,19 +24,24 @@
           </p>
         </div>
         <div class="text-end">
+          @if (User.IsInRole(nameof(Role.Admin)))
+          {
+            <!-- Edit button -->
+            <a class="btn btn-warning me-2" asp-action="Edit" asp-route-id="@Model.Id">
+              <i class="bi bi-pencil"></i>
+              تعديل
+            </a>
+            <!-- Delete button triggers modal -->
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#deleteModal">
+              <i class="bi bi-trash-fill"></i>
+              حذف
+            </button>
+          }
+
           <a class="btn btn-outline-primary me-2" asp-action="Index">
             <i class="bi bi-arrow-left"></i>
             العودة
           </a>
-          <a class="btn btn-warning me-2" asp-action="Edit" asp-route-id="@Model.Id">
-            <i class="bi bi-pencil"></i>
-            تعديل
-          </a>
-          <!-- Delete button triggers modal -->
-          <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#deleteModal">
-            <i class="bi bi-trash-fill"></i>
-            حذف
-          </button>
 
           <!-- Delete confirmation modal -->
           <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
