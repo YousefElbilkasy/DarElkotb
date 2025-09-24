@@ -21,8 +21,8 @@ public class AppDbContext : IdentityDbContext<IdentityUser<int>, IdentityRole<in
 
     modelBuilder.Entity<Author>().HasData(
       new Author { Id = 1, Name = "محمد بن صالح العثيمين", Bio = "عالم سعودي وفقيه وأستاذ جامعي.", ProfileImage = "othaymeen.jpg" },
-      new Author { Id = 2, Name = "ابن تيمية", Bio = "عالم مسلم مجتهد وفقيه ومفسر.", ProfileImage = "ibntaymiyyah.jpg" },
-      new Author { Id = 3, Name = "ابن القيم الجوزية", Bio = "عالم مسلم وفقيه ومفسر.", ProfileImage = "ibnalqayyim.jpg" },
+      new Author { Id = 2, Name = "ابن تيمية", Bio = "عالم مسلم مجتهد وفقيه ومفسر." },
+      new Author { Id = 3, Name = "ابن القيم الجوزية", Bio = "عالم مسلم وفقيه ومفسر." },
       new Author { Id = 4, Name = "محمد ناصر الدين الألباني", Bio = "محدث وفقيه سوري.", ProfileImage = "albani.jpg" },
       new Author { Id = 5, Name = "صالح الفوزان", Bio = "عالم سعودي وعضو هيئة كبار العلماء.", ProfileImage = "fawzan.jpg" },
       new Author { Id = 6, Name = "ياسر البرهامي", Bio = "عالم مصري ودكتور أطفال.", ProfileImage = "borhamy.jpg" }

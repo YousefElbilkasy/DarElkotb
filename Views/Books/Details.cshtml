@@ -17,11 +17,15 @@
 
     <div class="flex-fill">
       <div class="d-flex justify-content-between align-items-start">
-        <div>
-          <h3 class="mb-1">@Model.Title</h3>
-          <p class="text-muted mb-2">المؤلف: <strong>@Model.Author?.Name</strong> • الناشر:
-            <strong>@Model.Publisher?.Name</strong>
-          </p>
+        <div class="d-flex align-items-center gap-3">
+          <img src="~/assets/images/authors/@Model.Author.ProfileImage" class="rounded-circle border"
+            alt="@Model.Author?.Name" style="width:80px;height:80px;object-fit:cover;">
+          <div>
+            <h3 class="mb-1">@Model.Title</h3>
+            <p class="text-muted mb-2">المؤلف: <strong>@Model.Author?.Name</strong> • الناشر:
+              <strong>@Model.Publisher?.Name</strong>
+            </p>
+          </div>
         </div>
         <div class="text-end">
           @if (User.IsInRole(nameof(Role.Admin)))
