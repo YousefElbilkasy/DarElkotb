@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAW5DGxrxNhEid9UCuKkCYiwAAAAACAAAAAAAQZgAAAAEAACAAAABLOX7YMmYnQLK9E2/kcdtmada9NEFA2GfecusoV3TZygAAAAAOgAAAAAIAACAAAAAYl4Te3HuZkTmOW42hJ9DoVnFszzGfW/4JfIj3nu9FkiAAAABWA+egqa5SyEANeTENZDejFyqKoDZZwP87O//tZIS5YEAAAACRv44Xa1HHDjk4XXyKzePLTzJeG0d6noQhQmAalMWnCR1E/XD1xDzd7QzvR+QkmKSXc4TYZxJfCE5aPXRiWdNk</EncryptedPassword>
+    <History>True|2025-09-24T08:06:57.8526026Z||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="MonasterConnection">
+      <Value>Server=localhost%3bDatabase=DarElkotb%3bIntegrated Security=True%3bTrust Server Certificate=True%3bMultipleActiveResultSets=True</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
